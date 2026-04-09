@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <title>Home</title>
+</head>
+<body>
+    <div class="header">
+        <img id="profilepic" src="PXL_20260307_061807621-02.jpeg" alt="MERA PIC">
+        <h3 id="Heading">Sanath's Portfolio</h3>
+        <button id="feedback">FeedBack</button>
+    </div>
+    <div class="box">
+        <div class="hero-text">
+            <p class="eyebrow">Welcome to my digital portfolio</p>
+            <h1>Hello there!</h1>
+            <h3>I'm Sanath, and this portfolio showcases my design, coding, and creative projects.</h3>
+            <div class="hero-actions">
+                <button id="linkedin-popup">Connect with me on LinkedIn</button>
+                <a href="myself.html" class="secondary-button">View About Me</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="highlights">
+        <h2 class="section-heading">What I Bring</h2>
+        <div class="feature-cards">
+            <article class="card">
+                <h3>Featured Projects</h3>
+                <p>Responsive websites and interactive experiences built with HTML, CSS, and JavaScript.</p>
+                <a href="projects.html">View Projects</a>
+            </article>
+            <article class="card">
+                <h3>Achievements</h3>
+                <p>Highlights of milestones, awards, and skills that show your progress and impact.</p>
+                <a href="Achievements.html">Explore</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Feedback Modal -->
+    <div id="feedback-modal" class="popup-modal">
+        <div class="popup-content feedback-form">
+            <span class="close-button" id="feedback-close">&times;</span>
+            <h2>Send Feedback</h2>
+            <form id="feedback-form" action="mailto:sanath.lal2023@gmail.com?subject=Portfolio Feedback" method="POST" enctype="text/plain">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- LinkedIn QR Modal -->
+    <div id="linkedin-modal" class="popup-modal">
+        <div class="popup-content">
+            <span class="close-button" id="linkedin-close">&times;</span>
+            <h2>Scan to Connect on LinkedIn</h2>
+            <img src="linkedin-qr.jpeg" alt="LinkedIn QR Code" class="qr-image">
+            <p class="modal-text">Or visit me directly at <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">linkedin.com/in/yourprofile</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // Feedback Modal
+        const feedbackButton = document.getElementById('feedback');
+        const feedbackModal = document.getElementById('feedback-modal');
+        const feedbackClose = document.getElementById('feedback-close');
+
+        feedbackButton.addEventListener('click', () => {
+            feedbackModal.style.display = 'flex';
+        });
+
+        feedbackClose.addEventListener('click', () => {
+            feedbackModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === feedbackModal) {
+                feedbackModal.style.display = 'none';
+            }
+        });
+
+        // LinkedIn Modal
+        const linkedinButton = document.getElementById('linkedin-popup');
+        const linkedinModal = document.getElementById('linkedin-modal');
+        const linkedinClose = document.getElementById('linkedin-close');
+
+        linkedinButton.addEventListener('click', () => {
+            linkedinModal.style.display = 'flex';
+        });
+
+        linkedinClose.addEventListener('click', () => {
+            linkedinModal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target === linkedinModal) {
+                linkedinModal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
